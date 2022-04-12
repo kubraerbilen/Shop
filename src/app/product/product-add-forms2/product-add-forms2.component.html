@@ -1,0 +1,26 @@
+<h3>Yeni Ürün Ekle</h3>
+<form [formGroup] = "productAddForm" (ngSubmit) = "add()" class="form-group" >
+    <div style="padding: 15px;">
+        <input type="text" id="name" name="name" formControlName="name" class="form-control"  placeholder="Ürün Adı"  >
+        <div class="alert alert-danger" *ngIf=" productAddForm.get('name').hasError('required') && productAddForm.get('name').touched"> Ürün adı zorunludur.</div>
+    </div>
+    <div style="padding: 15px;">
+        <input type="text" id="description" name="description" formControlName="description" class="form-control"  placeholder="Ürün Açıklaması"  >
+        <div class="alert alert-danger" *ngIf=" productAddForm.get('description').hasError('required') && productAddForm.get('description').touched"> Açıklama zorunludur.</div>
+    </div>
+    <div style="padding: 15px;">
+        <input type="text" id="imageUrl" name="imageUrl" formControlName="imageUrl" class="form-control"  placeholder="Ürün Fotoğrafı">
+        <div class="alert alert-danger" *ngIf=" productAddForm.get('imageUrl').hasError('required') && productAddForm.get('imageUrl').touched"> Ürün fotoğrafı zorunludur.</div>
+    </div>
+    <div style="padding: 15px;">
+        <input type="text" id="price" name="price" formControlName="price" class="form-control"  placeholder="Ürün Fiyatı">
+        <div class="alert alert-danger" *ngIf=" productAddForm.get('price').hasError('required') && productAddForm.get('price').touched"> Ürün fiyatı zorunludur.</div>
+    </div>
+    <div class="form-group" style="padding: 15px;">
+        <select  formControlName="categoryId" required id="categoryId" name="categoryId ">
+            <option *ngFor="let category of categories" value="category.id"> {{category.name}}</option>
+        </select>
+        <div *ngIf="productAddForm.get('categoryId').hasError('required') && productAddForm.get('categoryId').touched" class="alert alert-danger" >Kategori gereklidir.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid"> Ürün Ekle</button>
+</form>
