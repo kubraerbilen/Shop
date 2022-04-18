@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'shop';
 
   isLoggenin(){
-    return this.accountService.isLoggenin();
+    return this.accountService.isLoggedin();
   }
   logOut(){
     this.accountService.logOut();

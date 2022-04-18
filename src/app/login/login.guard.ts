@@ -5,8 +5,8 @@ import { AccountService } from "../services/account.service";
 @Injectable()
 export class LoginGuard implements CanActivate {
     constructor(private accountService: AccountService, private router: Router) { }
-    canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        let logged = this.accountService.isLoggenin();
+    canActivate( route: ActivatedRouteSnapshot, state :RouterStateSnapshot): boolean {
+        let logged = this.accountService.isLoggedin();
         if(logged){
             return true;
         }

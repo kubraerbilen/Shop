@@ -9,7 +9,7 @@ import { ProductComponent } from './product/product.component';
 const routes: Routes = [
   {path : 'products', component : ProductComponent},
   {path : 'product-add-1', component : ProductAddForms1Component ,canActivate:[LoginGuard]},
-  {path : 'product-add-2', component : ProductAddForms2Component},
+  {path : 'product-add-2', component : ProductAddForms2Component ,canActivate:[LoginGuard]},
   {path : '', redirectTo : 'products', pathMatch: 'full'},
   {path : 'products/category/:categoryId', component : ProductComponent},
   {path : 'login', component : LoginComponent}

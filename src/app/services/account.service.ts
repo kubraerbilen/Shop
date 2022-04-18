@@ -6,15 +6,15 @@ export class AccountService {
 
   constructor() { }
   loggedIn = false;
-  login(user: User):boolean{
-    if(user.userName=="kubra" && user.password== "123"){
-      return true;
+  login(user : User):boolean{
+    if(user.userName=="kubra" && user.password== "123"){    
       this.loggedIn = true;
       localStorage.setItem("isLogged",user.userName);
+      return true;
     }
     return false;
   }
-  isLoggenin(){
+  isLoggedin(){
     return this.loggedIn;
   }
   logOut(){

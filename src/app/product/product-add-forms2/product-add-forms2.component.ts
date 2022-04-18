@@ -42,7 +42,7 @@ export class ProductAddForms2Component implements OnInit {
       this.product = Object.assign({},this.productAddForm.value)
     }
     this.productService.addProduct(this.product).subscribe(data=>{
-      this.alertifyService.success(data.name + "başarıyla eklendi.")
+      this.alertifyService.success(data.name + " başarıyla eklendi.")
     });
   }
 

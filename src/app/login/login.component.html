@@ -2,17 +2,21 @@
   <div class="text-center mb-4">
     <h1 class="h3 mb-3 fw-normal">Sisteme Giriş</h1>
   </div>
+
+
+  <div class="form-floating">
+    <input type="text" #userName="ngModel" [(ngModel)]="model.userName" id="userName" name="userName"
+      class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Kullanıcı Adı </label>
+  </div> 
+  <br>
+  <div class="form-floating">
+    <input class="form-control" type="password" #password="ngModel" [(ngModel)]="model.password" id="password" name="password"
+      placeholder="Password">
+    <label for="floatingPassword">Şifre</label>
+  </div>
+  <br>
+  <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
 </form>
 
-<div class="form-floating">
-  <input type="text" #userName="ngModel" [(ngModel)]="model.userName" id="userName" name="userName" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">Kullanıcı Adı </label>
-</div>
-<div class="form-floating">
-  <input type="text" #password="ngModel" [(ngModel)]="model.userName" id="password" 
-  id="password" name="password" placeholder="Password">
-  <label for="floatingPassword">Şifre</label>
-</div>
-
-<button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
 <p class="mt-5 mb-3 text-muted">Kübra ERBİLEN&copy; 2022</p>
